@@ -6,7 +6,8 @@ folder gerrit-jenkins-windows allows you run a complete build (build-master.md) 
 build-master.md requires parameters in this order:
 
 * base url of Gerrit server: ${GERRIT_SCHEME}://${GERRIT_HOST}:${GERRIT_PORT}/
-
+* branch : branch to build (master for eg)
+* buildall : true if build from scratch or false for incremental build
 
 build-gerrit.md requires parameters in this order:
 

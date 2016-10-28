@@ -11,6 +11,7 @@ call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\VsDevCmd
 echo building repo %REPO% + refspec %REFSPEC%
 fullbuild init git %GERRIT%full-build . || goto :failure
 fullbuild clone --shallow %REPO%  || goto :failure
+git pull --no-commit --ff-only %GERRIT%%REPO% %REFSPEC% || goto :failure
 fullbuild history --html || goto :failure
 fullbuild install || goto :failure
 fullbuild pull --bin || goto :failure
